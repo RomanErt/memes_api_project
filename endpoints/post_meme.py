@@ -28,10 +28,6 @@ class PostMeme(Endpoint):
 
         return self.response
 
-    @allure.step('Verify response tags are correct')
-    def test_response_tag_is_correct(self, tags):
-        assert self.converted_to_json["tags"] == tags
-
     def delete_meme(self, meme_id, headers):
         response = requests.delete(f"{self.url}/meme/{meme_id}", headers=headers)
         return response

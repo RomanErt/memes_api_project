@@ -5,11 +5,12 @@ from endpoints.get_all_memes import GetAllMemes
 from endpoints.post_meme import PostMeme
 from endpoints.modify_meme import ModifyMeme
 from endpoints.delete_meme import DeleteMeme
+from endpoints.endpoint import Endpoint
 
 
 @pytest.fixture(scope="session")
 def authorize_endpoint():
-    return Authorization()
+    return Authorization(url=Endpoint.url)
 
 
 @pytest.fixture()
