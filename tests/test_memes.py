@@ -47,7 +47,7 @@ def test_modify_meme_for_another_user(modify_meme_endpoint_factory, auth_header)
     meme_id = 110
     modify_meme_endpoint_factory.modify_meme(meme_id=meme_id, payload=TEST_BODY_UPDATE_POSITIVE, headers=auth_header)
     modify_meme_endpoint_factory.report_errors()
-    modify_meme_endpoint_factory.check_bad_request_403()
+    modify_meme_endpoint_factory.check_forbidden_403()
 
 
 def test_modify_meme(modify_meme_endpoint_factory, new_meme_id, auth_header):

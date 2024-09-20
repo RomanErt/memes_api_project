@@ -22,7 +22,7 @@ class Endpoint:
         assert self.response.status_code == 401
 
     @allure.step('Verify error 403 - Forbidden received (negative scenario')
-    def check_bad_request_403(self):
+    def check_forbidden_403(self):
         assert self.response.status_code == 403
 
     @allure.step('Verify response text is correct')
